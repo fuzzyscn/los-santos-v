@@ -15,7 +15,7 @@ end
 
 AddEventHandler('playerDropped', function(reason)
 	local player = source
-	local playerName = GetPlayerName(player)
+	local playerName = Scoreboard.GetPlayerName(player)
 
 	logger:Info('Dropped { '..playerName..', '..player..', '..reason..' }')
 
@@ -30,7 +30,7 @@ end)
 RegisterServerEvent('lsv:loadPlayer')
 AddEventHandler('lsv:loadPlayer', function()
 	local player = source
-	local playerName = GetPlayerName(player)
+	local playerName = Scoreboard.GetPlayerName(player)
 
 	logger:Info('Load { '..playerName..', '..player..', '..GetPlayerIdentifiers(player)[1]..' }')
 

@@ -15,11 +15,11 @@ end
 RegisterServerEvent('lsv:reportPlayer')
 AddEventHandler('lsv:reportPlayer', function(target, reason)
 	local player = source
-	local playerName = GetPlayerName(player)
+	local playerName = Scoreboard.GetPlayerName(player)
 	local playerId = GetPlayerIdentifiers(player)[1]
 
 	local targetId = GetPlayerIdentifiers(target)[1]
-	local targetName = GetPlayerName(target)
+	local targetName = Scoreboard.GetPlayerName(target)
 
 	Db.UpdateReports(target, function()
 		if not reportedPlayers[target] then return end

@@ -5,7 +5,7 @@ AddEventHandler('lsv:banPlayer', function(cheatName)
 	local player = source
 
 	local bannedPlayerId = GetPlayerIdentifiers(player)[1]
-	local bannedPlayerName = GetPlayerName(player)
+	local bannedPlayerName = Scoreboard.GetPlayerName(player)
 
 	Db.BanPlayer(player, function()
 		logger:Info('Player banned { '..bannedPlayerName..', '..bannedPlayerId..', '..cheatName..' }')

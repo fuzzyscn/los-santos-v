@@ -55,7 +55,7 @@ end
 
 
 function Scoreboard.AddPlayer(player, playerStats)
-	table.insert(scoreboard, { ['id'] = player, ['name'] = GetPlayerName(player), ['cash'] = playerStats.Cash,
+	table.insert(scoreboard, { ['id'] = player, ['name'] = Scoreboard.GetPlayerName(player), ['cash'] = playerStats.Cash,
 		['rank'] = playerStats.Rank, ['kdRatio'] = calculateKdRatio(playerStats.Kills, playerStats.Deaths),
 		['kills'] = playerStats.Kills, ['deaths'] = playerStats.Deaths, ['killstreak'] = 0 })
 
@@ -81,6 +81,11 @@ end
 
 function Scoreboard.GetRandomPlayer()
 	return scoreboard[math.random(Utils.GetTableLength(scoreboard))].id
+end
+
+
+function Scoreboard.GetPlayerName(player)
+	return GetPlayerName(player) or 'Unknown player'
 end
 
 

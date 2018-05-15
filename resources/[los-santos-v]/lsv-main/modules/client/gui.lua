@@ -20,8 +20,8 @@ function Gui.GetPlayerName(serverId, color, lowercase)
 			end
 		end
 
-
-		return color..'<C>'..GetPlayerName(GetPlayerFromServerId(serverId))..'</C>~w~'
+		local playerName = GetPlayerName(GetPlayerFromServerId(serverId)) or 'Unknown player'
+		return color..'<C>'..playerName..'</C>~w~'
 	end
 end
 

@@ -16,7 +16,7 @@ Citizen.CreateThread(function()
 		if not bountyPlayerId and Scoreboard.GetPlayersCount() > 1 then
 			bountyPlayerId = Scoreboard.GetRandomPlayer()
 
-			logger:Info('Set { '..GetPlayerName(bountyPlayerId)..', '..bountyPlayerId..' }')
+			logger:Info('Set { '..Scoreboard.GetPlayerName(bountyPlayerId)..', '..bountyPlayerId..' }')
 
 			TriggerClientEvent('lsv:setBounty', -1, bountyPlayerId)
 		end
@@ -29,7 +29,7 @@ AddEventHandler('baseevents:onPlayerKilled', function(killer)
 
 	if not bountyPlayerId or victim ~= bountyPlayerId or killer == -1 then return end
 
-	logger:Info('Killed { '..GetPlayerName(bountyPlayerId)..', '..bountyPlayerId..' }')
+	logger:Info('Killed { '..Scoreboard.GetPlayerName(bountyPlayerId)..', '..bountyPlayerId..' }')
 
 	bountyPlayerId = nil
 	eventFinishedTime = GetGameTimer()
